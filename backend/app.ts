@@ -6,16 +6,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req: Request, res: Response) => {
+    res.send("Server is running")
+})
 app.post("/analyze", async (req: Request, res: Response): Promise<void> => {
     const { url } = req.body;
-
-    // Validate URL format
     if (!url || typeof url !== "string") {
         res.status(400).json({ error: "A valid URL is required" });
         return;
     }
 
-    // Ensure URL has a protocol
     const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
     const urlPattern = /^https?:\/\/[^\s/$.?#].[^\s]*$/;
     if (!urlPattern.test(formattedUrl)) {
@@ -30,6 +30,7 @@ app.post("/analyze", async (req: Request, res: Response): Promise<void> => {
         res.status(500).json({ error: "Failed to analyze site" });
     }
 });
+
 
 const PORT = 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
