@@ -1,7 +1,8 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { analyzePerformance } from "./src/analyse";
-
+import dotenv from "dotenv"
+dotenv.config()
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -32,5 +33,5 @@ app.post("/analyze", async (req: Request, res: Response): Promise<void> => {
 });
 
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
