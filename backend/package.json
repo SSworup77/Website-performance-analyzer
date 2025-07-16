@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "puppeteer": "^24.11.2"
+    "puppeteer": "^24.11.2",
+    "serverless-http": "^3.2.0"
   }
 }
