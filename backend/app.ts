@@ -32,6 +32,5 @@ app.post("/analyze", async (req: Request, res: Response): Promise<void> => {
     }
 });
 
-export default app;
-// const PORT = ;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT;
+app.listen(process.env.PORT, () => console.log(`Server running on port ${PORT}`));
