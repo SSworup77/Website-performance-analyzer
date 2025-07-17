@@ -5,16 +5,16 @@ import dotenv from "dotenv"
 dotenv.config()
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:4000", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app/analyze"],
+    origin: ["http://localhost:5173", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
 }));
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Server is running")
-})
-app.post("/analyze", async (req: Request, res: Response): Promise<void> => {
+// app.get("/", (req: Request, res: Response) => {
+//     res.send("Server is running")
+// })
+app.post("/", async (req: Request, res: Response): Promise<void> => {
     const { url } = req.body;
     if (!url || typeof url !== "string") {
         res.status(400).json({ error: "A valid URL is required" });
