@@ -14,10 +14,10 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Server is running")
-})
-app.use('/api', analyseRoute)
+// app.get("/", (req: Request, res: Response) => {
+//     res.send("Server is running")
+// })
+app.use('/', analyseRoute)
 
 const PORT = process.env.PORT;
 app.listen(process.env.PORT, () => console.log(`Server running on port ${PORT}`));
