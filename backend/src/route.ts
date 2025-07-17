@@ -3,5 +3,5 @@ import { analyse } from "./analyse.controllers";
 
 const router = Router()
 
-router.post('analyse', analyse)
+router.post('/analyse', analyse)
 export default router;
