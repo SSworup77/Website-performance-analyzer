@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 dotenv.config()
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:4000", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app/"],
+    origin: ["http://localhost:4000", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app/analyze"],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
 }));
