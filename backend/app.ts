@@ -9,6 +9,7 @@ app.use(cors({
     origin: ["http://localhost:5173", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
+    credentials:true
 }));
 
 app.use(express.json());
