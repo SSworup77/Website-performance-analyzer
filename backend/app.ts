@@ -8,11 +8,9 @@ const app = express();
 app.use(cors({
     origin: ["http://localhost:5173", "https://website-performance-analyzer-sworup-shresthas-projects.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-    optionsSuccessStatus: 200
+    allowedHeaders: ["Content-Type"],
 }));
-app.options('*', cors());
+
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
